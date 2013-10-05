@@ -1,0 +1,10 @@
+Version of workspace file format:
+               1
+Time of storage:
+               "Sat Oct  5 19:43:04 GMT Daylight Time 2013"
+Name of the workspace:
+               "ProjectEuler"
+File paths of contained packages:
+               ["ProjectEuler.cabal"]
+Maybe file path of an active package:
+               Just "ProjectEuler.cabal"
