@@ -12,7 +12,7 @@ executable ProjectEuler
     main-is: Main.hs
     buildable: True
     hs-source-dirs: src
-    other-modules: Problem13 Problem1
+    other-modules: Problem4 Problem13 Problem1
  
 test-suite test-ProjectEuler
     build-depends: QuickCheck -any, base -any

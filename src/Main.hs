@@ -21,7 +21,7 @@ import Control.Monad (unless)
 import Data.List (stripPrefix)
 import System.Exit (exitFailure)
 import Test.QuickCheck.All (quickCheckAll)
-import Problem13
+import Problem4
 
 -- Simple function to create a hello message.
 hello s = "Hello " ++ s
@@ -32,7 +32,7 @@ prop_hello s = stripPrefix "Hello " (hello s) == Just s
 
 -- Hello World
 exeMain = do
-    putStrLn $ show $ problem13
+    putStrLn $ show problem4
 
 -- Entry point for unit tests.
 testMain = do
