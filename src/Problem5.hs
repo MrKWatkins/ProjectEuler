@@ -17,10 +17,10 @@ module Problem5 (
     problem5
 ) where
 
-isDivisibleBy :: (Integral a) => a -> a -> Bool
+isDivisibleBy :: Integral a => a -> a -> Bool
 isDivisibleBy number divisor = number `mod` divisor == 0
 
-dividesInto :: (Integral a) => a -> a -> Bool
+dividesInto :: Integral a => a -> a -> Bool
 dividesInto = flip isDivisibleBy
 
 -- Brute force approach.
@@ -29,17 +29,18 @@ smallestMultipleBruteForce divisors = head [x | x <- [1..], all (isDivisibleBy x
 
 -- Reduces the number of divisors, e.g. if a number is evenly divisible by 10
 -- then its also evenly divisible by 5.
-dividesAnyOf :: (Integral a) => a -> [a] -> Bool
+dividesAnyOf :: Integral a => a -> [a] -> Bool
 dividesAnyOf divisor numbers = any (dividesInto divisor) numbers
 
-reduceDivisors :: (Integral a) => [a] -> [a]
+reduceDivisors :: Integral a => [a] -> [a]
 reduceDivisors divisors = filter (\x -> not $ x `dividesAnyOf` (filter (>x) divisors)) divisors
 
 -- Smarter - step by the size of the smallest divisor.
-smallestMultiple :: (Integral a) => [a] -> a
-smallestMultiple divisors = head [x | x <- [smallestDivisor,2*smallestDivisor..], all (isDivisibleBy x) divisors]
+smallestMultiple :: Integral a => [a] -> a
+smallestMultiple divisors = head [x | x <- sequence, all (isDivisibleBy x) divisors]
     where
         smallestDivisor = minimum divisors
+        sequence = [smallestDivisor,2*smallestDivisor..]
 
 
 problem5 = smallestMultiple $ reduceDivisors [1..20]

@@ -5,20 +5,14 @@ build-type: Simple
 license: AllRightsReserved
 license-file: ""
 synopsis: Solutions to Project Euler problems
+description:  
 data-dir: ""
-
+ 
 executable ProjectEuler
-    build-depends: QuickCheck -any, base -any
+    build-depends: base -any
     main-is: Main.hs
     buildable: True
     hs-source-dirs: src
-    other-modules: Fibonacci Problem1 Problem2 Problem4 Problem5
-                   Problem13
-
-test-suite test-ProjectEuler
-    build-depends: QuickCheck -any, base -any
-    type: exitcode-stdio-1.0
-    main-is: Main.hs
-    buildable: True
-    cpp-options: -DMAIN_FUNCTION=testMain
-    hs-source-dirs: src
+    other-modules: Problem6 Problem5 Problem4 Problem2 Problem13
+                   Problem1 Fibonacci
+ 

@@ -15,6 +15,8 @@ module Problem1 (
     problem1
 ) where
 
-problem1 :: Integer -> Integer
-problem1 maxExclusive = sum [ x | x <- [1..(maxExclusive-1)], x `mod` 3 == 0 || x `mod` 5 == 0]
 
+multiplesOf3And5 :: Integer -> Integer
+multiplesOf3And5 maxExclusive = sum [ x | x <- [1..(maxExclusive-1)], x `mod` 3 == 0 || x `mod` 5 == 0]
+
+problem1 = multiplesOf3And5 1000
