@@ -1,4 +1,3 @@
-{-# LANGUAGE CPP, TemplateHaskell #-}
 -----------------------------------------------------------------------------
 --
 -- Module      :  Main
@@ -11,7 +10,7 @@ module Main (
     main
 ) where
 
-import Problem41
+import Problem8
 
 main = do
-    putStrLn $ show problem41
+    putStrLn $ show problem8
