@@ -11,9 +11,6 @@ module Problem16 (
     problem16
 ) where
 
-import Data.Char
-
-digits :: Integer -> [Integer]
-digits n = map (toInteger . digitToInt) $ show n
+import Core
 
 problem16 = sum . digits $ 2^1000
