@@ -10,7 +10,7 @@ module Main (
     main
 ) where
 
-import Problem3
+import Problem9
 
 main = do
-    putStrLn $ show problem3
+    putStrLn $ show problem9
