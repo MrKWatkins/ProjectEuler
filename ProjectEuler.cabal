@@ -14,6 +14,6 @@ executable ProjectEuler
     buildable: True
     hs-source-dirs: src
     other-modules: Problem9 Problem8 Problem7 Problem6 Problem5
-                   Problem48 Problem41 Problem4 Problem3 Problem2 Problem13 Problem10
-                   Problem1 Fibonacci
+                   Problem48 Problem41 Problem4 Problem3 Problem2 Problem13 Problem12
+                   Problem10 Problem1 Fibonacci
  
