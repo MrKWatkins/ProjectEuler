@@ -15,7 +15,14 @@ module Problem7 (
     problem7
 ) where
 
-import Primes
+-- Rather unefficient I know...
+isPrime :: Integer -> Bool
+isPrime 1 = False
+isPrime 2 = True
+isPrime n = all (\x -> n `mod` x /= 0) $ 2:[3,5..n-1]
+
+primes :: [Integer]
+primes = filter isPrime $ 2:[3,5..]
 
 nthPrime n = primes !! (n - 1)    -- -1 as primes is zero indexed
 
