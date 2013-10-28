@@ -12,7 +12,7 @@ executable ProjectEuler
     main-is: Main.hs
     buildable: True
     hs-source-dirs: src
-    other-modules: Core Problem9 Problem8 Problem7 Problem6 Problem5
-                   Problem48 Problem41 Problem4 Problem3 Problem20 Problem2 Problem16
-                   Problem13 Problem12 Problem10 Problem1 Fibonacci
+    other-modules: Problem30 Core Problem9 Problem8 Problem7 Problem6
+                   Problem5 Problem48 Problem41 Problem4 Problem3 Problem20 Problem2
+                   Problem16 Problem13 Problem12 Problem10 Problem1 Fibonacci
  
