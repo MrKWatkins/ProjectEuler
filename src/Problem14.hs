@@ -27,18 +27,52 @@ module Problem14 (
 
 import Data.List
 import Data.Ord
+import qualified Data.Map.Strict as Map
+import Control.Monad.State
 
 collatzSequence :: Integer -> [Integer]
 collatzSequence 1 = [1]
 collatzSequence n
-    | even n = n : collatzSequence (truncate (fromIntegral (n) / 2))
+    | even n = n : collatzSequence (n `div` 2)
     | otherwise = n : collatzSequence (3 * n + 1)
 
 collatzLength :: Integer -> Integer
 collatzLength 1 = 1
 collatzLength n
-    | even n = 1 + collatzLength (truncate (fromIntegral (n) / 2))
+    | even n = 1 + collatzLength (n `div` 2)
     | otherwise = 1 + collatzLength (3 * n + 1)
 
-problem14 :: Integer
-problem14 = fst $ maximumBy (comparing snd) $ map (\x -> (x, collatzLength x)) [1..999999]
+type Cache = Map.Map Integer Integer
+
+nextCollatz :: Integer -> Integer
+nextCollatz n
+    | even n = n `div` 2
+    | otherwise = 3 * n + 1
+
+cachedCollatzLength :: Integer -> State Cache Integer
+cachedCollatzLength 1 = return 1
+cachedCollatzLength n = do
+  cache <- get
+  case Map.lookup n cache of
+    Nothing -> do
+        let next = nextCollatz n
+        lengthOfNext <- cachedCollatzLength next
+        put $ Map.insert next lengthOfNext cache
+        return $ lengthOfNext + 1
+    Just length -> return length
+
+trackMax currentMax next = do
+    lengthOfNext <- cachedCollatzLength next
+    return $ maximumBy (comparing snd) [currentMax, (next, lengthOfNext)]
+
+maxCollatzLength :: [Integer] -> (Integer, Integer)
+maxCollatzLength xs = flip evalState Map.empty $ do
+  foldM trackMax (1, 1) xs
+
+problem14BruteForce :: [Integer] -> Integer
+problem14BruteForce xs = fst $ maximumBy (comparing snd) $ map (\x -> (x, collatzLength x)) xs
+
+problem14Cached :: [Integer] -> Integer
+problem14Cached = fst . maxCollatzLength
+
+problem14 = problem14BruteForce [1..99999]

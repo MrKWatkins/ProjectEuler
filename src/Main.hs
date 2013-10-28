@@ -26,4 +26,5 @@ main = do
 
     finishedAt <- getCPUTime
     let diff = (fromIntegral (finishedAt - startedAt)) / (10^12)
-    printf "Time taken: %0.3fs" (diff :: Double)
+    printf "Time taken: %0.4fs\n" (diff :: Double)
+
