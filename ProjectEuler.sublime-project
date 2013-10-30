@@ -15,7 +15,7 @@
 	[
         {
 				"name": "ProjectEuler - GHC",
-      		"cmd": "ghc --make src\\Main.hs -isrc -o ProjectEuler.exe -odir obj\\O1 -hidir obj\\O1",
+      		"cmd": "ghc --make src\\ProjectEuler.hs -isrc -o ProjectEuler.exe -odir obj\\O1 -hidir obj\\O1",
       		"shell": true,
             "working_dir": "$project_path",
   				"file_regex": "^(\\S*?):(\\d+):(\\d+):$",
@@ -29,7 +29,7 @@
         },
         {
 				"name": "ProjectEuler - GHC Optimized",
-      		"cmd": "ghc --make src\\Main.hs -O2 -isrc -o ProjectEuler.exe -odir obj\\O2 -hidir obj\\O2",
+      		"cmd": "ghc --make src\\ProjectEuler.hs -O2 -isrc -o ProjectEuler.exe -odir obj\\O2 -hidir obj\\O2",
             "working_dir": "$project_path",
   				"file_regex": "^(\\S*?):(\\d+):(\\d+):$",
 				"shell": true,
