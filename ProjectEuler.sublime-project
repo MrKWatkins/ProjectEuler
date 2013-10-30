@@ -1,0 +1,45 @@
+{
+	"folders":
+	[
+		{
+			"path": "src"
+		}
+	],
+	
+	"settings":
+	{
+		"tab_size": 3
+	},
+
+	"build_systems":
+	[
+        {
+				"name": "ProjectEuler - GHC",
+      		"cmd": "ghc --make src\\Main.hs -isrc -o ProjectEuler.exe -odir obj\\O1 -hidir obj\\O1",
+      		"shell": true,
+            "working_dir": "$project_path",
+  				"file_regex": "^(\\S*?):(\\d+):(\\d+):$",
+				"variants":
+				[
+					{
+						"name": "Run",
+      				"cmd": "$project_path\\ProjectEuler.exe"
+					}
+				]
+        },
+        {
+				"name": "ProjectEuler - GHC Optimized",
+      		"cmd": "ghc --make src\\Main.hs -O2 -isrc -o ProjectEuler.exe -odir obj\\O2 -hidir obj\\O2",
+            "working_dir": "$project_path",
+  				"file_regex": "^(\\S*?):(\\d+):(\\d+):$",
+				"shell": true,
+				"variants":
+				[
+					{
+						"name": "Run",
+      				"cmd": "$project_path\\ProjectEuler.exe"
+					}
+				]
+        }
+    ]
+}
