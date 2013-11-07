@@ -33,11 +33,11 @@ isSumOfPowers power n = n == sumOfPowers power n
 isSumOfFifthPowers = isSumOfPowers 5
 
 hasMultipleNonZeroDigits :: Integer -> Bool
-hasMultipleNonZeroDigits n = (length $ filter (/= 0) $ digits n) > 1
+hasMultipleNonZeroDigits n = length (filter (/= 0) $ digits n) > 1
 
 -- sumOfPowers 5 999999 = 413343
 -- sumOfPowers 5 9999999 = 472392
 -- So highest 7 digit number has a sumOfPowers that doesn't reach 7 digits. We can therefore
 -- stop by this point. (And probably quite a way before that)
 
-problem30 = sum $ [x | x <- [0..9999999], isSumOfFifthPowers x, hasMultipleNonZeroDigits x]
+problem30 = sum [x | x <- [0..9999999], isSumOfFifthPowers x, hasMultipleNonZeroDigits x]

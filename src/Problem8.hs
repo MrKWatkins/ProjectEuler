@@ -49,6 +49,6 @@ sublists size list@(_:xs)
         sublist = take size list
 
 highestConsecutiveProduct :: Integer -> Int -> Integer
-highestConsecutiveProduct n size = maximum $ map (foldl1 (*)) $ sublists size $ digits n
+highestConsecutiveProduct n size = maximum $ map product $ sublists size $ digits n
 
 problem8 = highestConsecutiveProduct number 5

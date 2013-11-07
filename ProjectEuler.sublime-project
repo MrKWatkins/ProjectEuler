@@ -45,7 +45,8 @@
 				"name": "ProjectEuler - HLint",
       		"cmd": "hlint src",
             "working_dir": "$project_path",
-				"shell": true
+  				"file_regex": "^(\\S*?):(\\d+):(\\d+):",
+				"shell": false
         }
     ]
 }

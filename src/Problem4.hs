@@ -16,6 +16,6 @@ module Problem4 (
 
 
 isPalindrome :: Show a => a -> Bool
-isPalindrome x = (reverse $ show x) == show x
+isPalindrome x = reverse (show x) == show x
 
 problem4 = maximum [ x | y <- [1..999], z <- [1..999], let x = y*z, isPalindrome x ]

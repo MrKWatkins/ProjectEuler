@@ -66,8 +66,7 @@ trackMax currentMax next = do
     return $ maximumBy (comparing snd) [currentMax, (next, lengthOfNext)]
 
 maxCollatzLength :: [Integer] -> (Integer, Integer)
-maxCollatzLength xs = flip evalState Map.empty $ do
-  foldM trackMax (1, 1) xs
+maxCollatzLength xs = flip evalState Map.empty $ foldM trackMax (1, 1) xs
 
 problem14BruteForce :: [Integer] -> Integer
 problem14BruteForce xs = fst $ maximumBy (comparing snd) $ map (\x -> (x, collatzLength x)) xs

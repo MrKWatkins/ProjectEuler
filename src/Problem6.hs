@@ -28,10 +28,10 @@ sumOfSquares :: (Integral a) => [a] -> a
 sumOfSquares = sum . map (^2)
 
 squareOfSum :: (Integral a) => [a] -> a
-squareOfSum numbers = (sum numbers) ^ 2
+squareOfSum numbers = sum numbers ^ 2
 
 sumSquareDifference :: (Integral a) => [a] -> a
-sumSquareDifference numbers = (squareOfSum numbers) - (sumOfSquares numbers)
+sumSquareDifference numbers = squareOfSum numbers - sumOfSquares numbers
 
 problem6 :: Integer
 problem6 = sumSquareDifference [1..100]

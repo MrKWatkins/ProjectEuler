@@ -15,7 +15,7 @@ module Problem3 (
 import Data.Numbers.Primes
 
 primeFactors :: Integer -> [Integer]
-primeFactors n = filter (\x -> n `mod` x == 0) $ takeWhile (< max) $ primes
+primeFactors n = filter (\x -> n `mod` x == 0) $ takeWhile (< max) primes
     where
         max = toInteger . ceiling . sqrt . fromIntegral $ n
 

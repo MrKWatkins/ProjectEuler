@@ -33,4 +33,4 @@ module Problem25 (
 import Core
 import Fibonacci
 
-problem25 = fst . head $ dropWhile (\t -> (digitCount $ snd t) < 1000) $ zip [0..] fibSeries
+problem25 = fst . head $ dropWhile (\t -> digitCount (snd t) < 1000) $ zip [0..] fibSeries

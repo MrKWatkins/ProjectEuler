@@ -26,5 +26,5 @@ primes = filter isPrime $ 2:[3,5..]
 
 nthPrime n = primes !! (n - 1)    -- -1 as primes is zero indexed
 
-problem7 = (nthPrime 10001)
+problem7 = nthPrime 10001
 

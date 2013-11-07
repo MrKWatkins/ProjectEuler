@@ -43,4 +43,4 @@ triangularNumbers = scanl1 (+) [1..]
 divisors :: Integral a => a -> a
 divisors n = product $ map ((+1) . genericLength) $ group $ primeFactors n
 
-problem12 = head $ [t | t <- triangularNumbers, (divisors t) > 500]
+problem12 = head [t | t <- triangularNumbers, divisors t > 500]

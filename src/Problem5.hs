@@ -29,10 +29,10 @@ smallestMultipleBruteForce divisors = head [x | x <- [1..], all (isDivisibleBy x
 -- Reduces the number of divisors, e.g. if a number is evenly divisible by 10
 -- then its also evenly divisible by 5.
 dividesAnyOf :: Integral a => a -> [a] -> Bool
-dividesAnyOf divisor numbers = any (dividesInto divisor) numbers
+dividesAnyOf divisor = any (dividesInto divisor)
 
 reduceDivisors :: Integral a => [a] -> [a]
-reduceDivisors divisors = filter (\x -> not $ x `dividesAnyOf` (filter (>x) divisors)) divisors
+reduceDivisors divisors = filter (\x -> not $ x `dividesAnyOf` filter (>x) divisors) divisors
 
 -- Smarter - step by the size of the smallest divisor.
 smallestMultiple :: Integral a => [a] -> a

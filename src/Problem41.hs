@@ -21,10 +21,10 @@ import Data.List
 import Data.Numbers.Primes
 
 panDigitals :: Int -> [Int]
-panDigitals n = map (read) $ permutations digits
+panDigitals n = map read $ permutations digits
     where
-        digits = map (intToDigit) [1..n]
+        digits = map intToDigit [1..n]
 
-reverseOrderedPanDigitals = concat $ map (reverse . sort . panDigitals) [9,8..1]
+reverseOrderedPanDigitals = concatMap (sortBy (flip compare) . panDigitals) [9,8..1]
 
 problem41 = head [x | x <- reverseOrderedPanDigitals, isPrime x]

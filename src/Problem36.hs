@@ -17,7 +17,7 @@ module Problem36 (
 
 import Core
 
-isPalindrome s = (reverse s) == s
+isPalindrome s = reverse s == s
 
 isDecimalPalindrome n = isPalindrome $ intToString n
 isBinaryPalindrome n = isPalindrome $ intToBinaryString n

@@ -22,9 +22,9 @@ main = do
     startedAt <- getCPUTime
     putStr "Answer: "
 
-    putStrLn $ show problem36
+    print problem36
 
     finishedAt <- getCPUTime
-    let diff = (fromIntegral (finishedAt - startedAt)) / (10^12)
+    let diff = fromIntegral (finishedAt - startedAt) / (10^12)
     printf "Time taken: %0.4fs\n" (diff :: Double)
 
