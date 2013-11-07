@@ -40,6 +40,12 @@
       				"cmd": "$project_path\\ProjectEuler.exe"
 					}
 				]
+        },
+        {
+				"name": "ProjectEuler - HLint",
+      		"cmd": "hlint src",
+            "working_dir": "$project_path",
+				"shell": true
         }
     ]
 }
