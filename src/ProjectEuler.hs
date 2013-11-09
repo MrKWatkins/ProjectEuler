@@ -14,7 +14,7 @@ import Text.Printf
 import Control.Exception
 import System.CPUTime
 
-import Problem35
+import Problem52
 
 -- Timing based on http://www.haskell.org/haskellwiki/Timing_computations.
 
@@ -22,7 +22,7 @@ main = do
     startedAt <- getCPUTime
     putStr "Answer: "
 
-    print problem35
+    print problem52
 
     finishedAt <- getCPUTime
     let diff = fromIntegral (finishedAt - startedAt) / (10^12)
