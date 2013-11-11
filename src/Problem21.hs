@@ -25,8 +25,8 @@ properDivisors n = [x | x <- [1..(n+1) `div` 2], n `mod` x == 0]
 -- Returns true if the numbers are amicable *and* it is the smaller of the two amicable numbers.
 -- Shortcut to counting each pair only once.
 isSmallerAmicable :: Integral a => a -> Bool
-isSmallerAmicable n = n < m && (sum $ properDivisors m) == n
+isSmallerAmicable n = n < m && sum (properDivisors m) == n
 	where
 		m = sum $ properDivisors n
 
-problem21 = sum [x + (sum $ properDivisors x) | x <- [2..9999], isSmallerAmicable x]
+problem21 = sum [x + sum (properDivisors x) | x <- [2..9999], isSmallerAmicable x]
