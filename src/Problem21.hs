@@ -19,8 +19,7 @@ module Problem21 (
     problem21
 ) where
 
-properDivisors :: Integral a => a -> [a]
-properDivisors n = [x | x <- [1..(n+1) `div` 2], n `mod` x == 0]
+import Divisors
 
 -- Returns true if the numbers are amicable *and* it is the smaller of the two amicable numbers.
 -- Shortcut to counting each pair only once.
