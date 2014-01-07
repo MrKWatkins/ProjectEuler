@@ -49,6 +49,17 @@ digitCount = digitCountInBase 10
 binaryDigitCount :: (Integral a, Show a) => a -> Int
 binaryDigitCount = digitCountInBase 2
 
+intToExpFormatPres :: (Integral a, Show a) => Int -> a -> String
+intToExpFormatPres p x = head digits : decimalPlaces ++ "E+" ++ intToString exponent
+	where
+		digits = intToString x
+		exponent = length digits - 1
+		paddedTail = tail digits ++ repeat '0'
+		decimalPlaces = if p == 0 then "" else '.' : take p paddedTail
+
+intToExpFormat :: (Integral a, Show a) => a -> String
+intToExpFormat = intToExpFormatPres 2
+
 factorial :: Integer -> Integer
 factorial 1 = 1
 factorial n = n * factorial (n-1)
