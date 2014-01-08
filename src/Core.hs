@@ -16,6 +16,8 @@ module Core (
 	digitCountInBase,
 	digitCount,
 	binaryDigitCount,
+	intToExpFormatPres,
+	intToExpFormat,
 	factorial
 ) where
 
